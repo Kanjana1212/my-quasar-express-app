@@ -62,7 +62,7 @@ const gitSteps = [
   },
   {
     title: 'push ขึ้น GitHub',
-    detail: 'ใช้ git push origin feature/quasar-demo แล้วเปิด Pull Request',
+    detail: 'ใช้ git push origin feature/quasar-version-control-page แล้วเปิด Pull Request',
   },
 ]
 
@@ -77,7 +77,7 @@ const dockerItems = [
   },
   {
     title: 'Volume',
-    detail: 'ใช้เก็บข้อมูลถาวร เช่น log / ไฟล์ upload (frontend อาจไม่ใช้มากเท่า backend)',
+    detail: 'ใช้เก็บข้อมูลถาวร เช่น log / ไฟล์ upload',
   },
   {
     title: 'Network',
