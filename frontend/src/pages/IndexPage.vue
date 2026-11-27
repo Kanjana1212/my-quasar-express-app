@@ -5,6 +5,7 @@
       Version Control + Docker Demo (Quasar)
     </div>
 
+    <!-- Git Workflow -->
     <q-card class="q-mb-md">
       <q-card-section>
         <div class="text-h6">
@@ -25,7 +26,8 @@
       </q-card-section>
     </q-card>
 
-    <q-card>
+    <!-- Docker Concepts -->
+    <q-card class="q-mb-md">
       <q-card-section>
         <div class="text-h6">Docker Concepts (สรุปสั้น ๆ)</div>
 
@@ -34,6 +36,26 @@
             <q-item-section>
               <q-item-label>{{ item.title }}</q-item-label>
               <q-item-label caption>{{ item.detail }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-card-section>
+    </q-card>
+
+    <!-- Docker Quick Reference -->
+    <q-card>
+      <q-card-section>
+        <div class="text-h6">Docker Quick Reference</div>
+
+        <q-list bordered separator class="q-mt-sm">
+          <q-item v-for="(command, index) in dockerCommands" :key="index">
+            <q-item-section>
+              <q-item-label class="text-weight-bold">
+                {{ command.name }}
+              </q-item-label>
+              <q-item-label caption>
+                {{ command.detail }}
+              </q-item-label>
             </q-item-section>
           </q-item>
         </q-list>
@@ -82,6 +104,29 @@ const dockerItems = [
   {
     title: 'Network',
     detail: 'เชื่อม container ระหว่างกัน เช่น frontend คุยกับ backend ผ่าน network ของ Docker',
+  },
+]
+
+const dockerCommands = [
+  {
+    name: 'docker build',
+    detail: 'ใช้สร้าง Docker Image จาก Dockerfile เมื่อต้องการสร้างหรืออัปเดต Image',
+  },
+  {
+    name: 'docker run',
+    detail: 'ใช้สร้างและเริ่มต้น Container จาก Image เมื่อต้องการเปิดใช้งานแอป',
+  },
+  {
+    name: 'docker ps',
+    detail: 'ใช้ตรวจสอบ Container ที่กำลังทำงานอยู่',
+  },
+  {
+    name: 'docker compose up -d --build',
+    detail: 'ใช้ Build Image และเริ่มบริการทั้งหมดตามไฟล์ Compose ในโหมดเบื้องหลัง',
+  },
+  {
+    name: 'docker compose down',
+    detail: 'ใช้หยุดและลบ Container และ Network ที่สร้างโดย Docker Compose',
   },
 ]
 </script>
